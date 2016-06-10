@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Azure.CloudService.Documents" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="Azure.WebRole.Routing">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="0de11b29-40b3-4952-9292-b93aea200c74" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="Azure.WebRole.DocumentSite">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="DocumentsConnectionString" value="{put your local Documents DB connection string here}" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="0de11b29-40b3-4952-9292-b93aea200c74" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
