@@ -17,7 +17,7 @@ This sample project shows how this problem can be solved by implementing an inte
 
 This sample is created based on a standard Visual Studio Azure Cloud Service project template. The sample project contains the following. 
 
-####Two web roles:
+####Two web roles
 
  * **WebRole.DocumentSite**  
     A ready-to-scale template of a customer simple front-end ASP.NET web application containing webpages with DevExpress ASP.NET Office controls (Spreadsheet and RichEdit).
@@ -52,14 +52,14 @@ To run this sample you will need:
  * SQL Server 2012 (or higher) with SQL Server Management Studio 2012 (or higher)
  * DevExpress ASP.NET Subscription (version 16.1 or higher)
 
- * An Azure subscription (a free trial is sufficient: https://azure.microsoft.com/en-us/free/)
- * Azure Service Bus namespace (see how to create one: https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/#create-a-namespace)  
+ * An Azure subscription (a [free trial](https://azure.microsoft.com/en-us/free/) is sufficient)
+ * Azure Service Bus namespace ([see how to create one](https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/#create-a-namespace))  
 You need the following information from the Service Bus namespace configuration:
    * Service Bus namespace name
    * Shared access policy name
    * Shared access policy primary key
 
- * Azure SQL Database logical server (see how to create one: https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server)  
+ * Azure SQL Database logical server ([see how to create one](https://azure.microsoft.com/en-us/documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server))  
 You need the following SQL Server credentials:
    * Server name
    * Server administrator login
@@ -127,9 +127,9 @@ This sample project provides you with a sample database file of the .mdf type. Y
 
 You need to deploy this database to Azure. A possible scenario can be as follows:
 
-1. Attach the database to your local SQL Server. Use SQL Server Management Studio to do that. (learn more here: https://msdn.microsoft.com/en-us/library/ms190209(v=sql.120).aspx)
+1. Attach the database to your local SQL Server. Use SQL Server Management Studio to do that ([learn more](https://msdn.microsoft.com/en-us/library/ms190209(v=sql.120).aspx)).
 
-2. Deploy the database to Azure using the Deploy the Database to Microsoft Azure Database wizard in SQL Server Management Studio (learn more here: https://azure.microsoft.com/en-us/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard/). At this step, you will need to enter your Azure SQL Server's credentials.
+2. Deploy the database to Azure using the Deploy the Database to Microsoft Azure Database wizard in SQL Server Management Studio ([learn more](https://azure.microsoft.com/en-us/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard/)). At this step, you will need to enter your Azure SQL Server's credentials.
 
 After deployment, you can determine the database connection string in your Azure portal. Put this string to the sample project's ServiceConfiguration.Cloud.cscfg configuration file and provide your user name and password.
 
