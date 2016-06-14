@@ -38,7 +38,7 @@ namespace Routing {
         // Startup tasks that require role-specific data should use 
         // Microsoft.WindowsAzure.ServiceRuntime.RoleEntryPoint.OnStart.
         // https://azure.microsoft.com/en-us/documentation/articles/cloud-services-startup-tasks/
-        static void SetUpAlwaysRuning() {
+        static void SetUpAlwaysRunning() {
             string command = @"call ./Setup/SetUpAppPoolsAlwaysRunning.cmd";
             CommandLineUtils.CmdExecute(command);
         }
