@@ -14,12 +14,23 @@ namespace DevExpress.Web.OfficeAzureCommunication.Diagnostic {
         
         public static string CreateDianosticPageHtml(string serverName, Func<string, string> getHeaderValue) {
             StringBuilder html = new StringBuilder();
+            html.AppendLine(@"<!DOCTYPE html>");
+            html.AppendLine(@"<html><head>");
+            html.AppendLine(@"<title>Diagnostic</title>");
             html.AppendLine(GetStylesBlock());
+            html.AppendLine(@"</head><body>");
+
             html.AppendFormat("{0}<hr/>", WorkSessionServerView.GetHeader(serverName));
+
             if(getHeaderValue != null)
                 html.AppendFormat("{0}<hr/>", WorkSessionServerView.GetServerList(getHeaderValue));
+
             html.AppendFormat("{0}<hr/>", WorkSessionServerView.GetWorkSessionTable());
+
             html.AppendFormat("{0}<hr/>", WorkSessionServerView.GetTraceLog());
+
+            html.AppendLine(@"</body></html>");
+
             return html.ToString();
         }
         public static void CreateDianosticPageControl(Control container, string serverName) {
@@ -41,7 +52,7 @@ namespace DevExpress.Web.OfficeAzureCommunication.Diagnostic {
             var sb = new StringBuilder();
             sb.AppendLine("<h2>Routing Table</h2>");
             sb.AppendLine("<table class='log'>");
-            var row = string.Format("<tr><th>Work Session ID</th><th>Document ID</th><th>RoleInstance Name</th><th>Server Name</th><th>IP</th><th>createdAt</th><th>processed At</th><th>delay(sec)</th><th>status</th></tr>");
+            var row = string.Format("<tr><th>Work Session ID</th><th>Document ID</th><th>RoleInstance Name</th><th>Server Name</th><th>IP</th><th>Created At</th><th>Processed At</th><th>Delay (sec)</th><th>Status</th></tr>");
             sb.AppendLine(row);
 
             WorkSessionServer.ForEachWorkSession((id, ws) => {
